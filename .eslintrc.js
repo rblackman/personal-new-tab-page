@@ -48,7 +48,7 @@ module.exports = {
 				trailingComma: 'none',
 				semi: true,
 				singleQuote: true,
-				tabWidth: 4,
+				tabWidth: 2,
 				useTabs: true,
 				printWidth: 120,
 				endOfLine: 'auto',
