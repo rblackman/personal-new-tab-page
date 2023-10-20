@@ -61,7 +61,8 @@ module.exports = {
 		],
 		'max-len': [2, 160],
 		'linebreak-style': 0,
-		'react/jsx-indent-props': [2, 'tab']
+		'react/jsx-indent-props': [2, 'tab'],
+		'@typescript-eslint/object-curly-spacing': [2, 'always']
 	},
 	settings: {
 		'import/resolver': {

@@ -1,24 +1,17 @@
 /* eslint-disable object-curly-newline */
-import Icon, { IconType } from './icon';
+import { LinkListLink } from '../../../types/linkListType';
+import Icon from './icon';
 import styles from './link.module.css';
-import SubMenu from './subMenu';
-import { SubMenuItemProps } from './subMenuItem';
+import SubLinks from './subLinks';
 
-export interface LinkProps {
-	href: string;
-	text: string;
-	icon: IconType;
-	subMenu?: SubMenuItemProps[];
-}
-
-export default function Link({ href, text, icon, subMenu }: LinkProps) {
+export default function Link({ href, text, icon, subLinks }: LinkListLink) {
 	return (
 		<li className={styles.link}>
 			<a className={styles.a} href={href}>
 				<Icon icon={icon} />
 				<span className={styles.text}>{text}</span>
 			</a>
-			<SubMenu items={subMenu} />
+			<SubLinks subLinks={subLinks} />
 		</li>
 	);
 }

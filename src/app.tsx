@@ -1,5 +1,9 @@
-import Bg, { BgOptionsType } from './components/bg/bg';
-import Link from './components/link/link';
+/* eslint-disable react/jsx-props-no-spreading */
+import data from '../data.json';
+import LinkListType from '../types/linkListType';
+import { BgOptionsType } from './components/bg/bg';
+import Layout from './components/layout/layout';
+import LinkList from './components/linkList/linkList';
 import CurrentTime from './currentTime';
 import './global.css';
 
@@ -8,21 +12,12 @@ interface Props {
 }
 
 export default function App({ bg }: Props) {
+	const links = data as LinkListType[];
+
 	return (
-		<Bg bg={bg}>
-			<h1>Hello World</h1>
+		<Layout bg={bg}>
 			<CurrentTime />
-			<ul>
-				<Link
-					href="https://reddit.com/"
-					text="Reddit"
-					icon="reddit"
-					subMenu={[
-						{ href: 'https://www.reddit.com/r/politics/', name: 'Politics' },
-						{ href: 'https://reddit.com/r/coys/', name: 'COYS' }
-					]}
-				/>
-			</ul>
-		</Bg>
+			<LinkList {...links[0]} placement="left" />
+		</Layout>
 	);
 }

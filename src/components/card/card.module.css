@@ -1,0 +1,21 @@
+.card {
+	background: rgba(var(--white-r), var(--white-g), var(--white-b), 0.74);
+	border: 0.0625rem solid rgba(246, 246, 246, 1);
+	box-shadow: 0.1875rem 0.1875rem 0.5rem -0.125rem rgba(var(--black-r), var(--black-g), var(--black-b), 0.4);
+	padding: 0.75rem;
+	animation: 0.2s ease-in fadeIn forwards;
+	animation-delay: 0.2s;
+	backdrop-filter: blur(0.25rem);
+}
+
+.left {
+	grid-area: left;
+}
+
+.right {
+	grid-area: right;
+}
+
+.footer {
+	grid-area: footer;
+}

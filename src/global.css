@@ -45,6 +45,10 @@
 	--theme-fg: rgba(var(--white-r), var(--white-g), var(--white-b), var(--theme-fg-a));
 }
 
+* {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	font-size: 20px;

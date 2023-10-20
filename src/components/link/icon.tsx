@@ -1,31 +1,6 @@
 import clsx from 'clsx';
+import { IconType } from '../../../types/linkListType';
 import styles from './icon.module.css';
-
-export type IconType =
-	| 'ap'
-	| 'ars'
-	| 'aruba'
-	| 'att'
-	| 'auvik'
-	| 'azure'
-	| 'cohesity'
-	| 'devops'
-	| 'fb'
-	| 'jira'
-	| 'mtdorg'
-	| 'mtdweb'
-	| 'ng'
-	| 'ninja'
-	| 'office'
-	| 'paycom'
-	| 'pocket'
-	| 'polygon'
-	| 'reddit'
-	| 'sc'
-	| 'verge'
-	| 'verizon'
-	| 'wirecutter'
-	| 'ynab';
 
 export interface IconProps {
 	icon: IconType;
