@@ -5,10 +5,7 @@
 	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
-	"cSpell.words": [
-		"clsx",
-		"commitlint",
-	],
+	"cSpell.words": ["clsx", "commitlint"],
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true,
 		"source.organizeImports": true
