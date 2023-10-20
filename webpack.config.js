@@ -10,6 +10,7 @@ module.exports = {
         index: "./src/index.tsx"
     },
     mode,
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
         static: {
             directory: path.join(__dirname, 'public'),
