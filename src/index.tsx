@@ -1,5 +1,6 @@
-export default function App() {
-    return (
-        <h1>Hello World</h1>
-    );
-}
+import ReactDOM from "react-dom";
+import App from "./app";
+
+const element = document.querySelector('body');
+
+ReactDOM.render(<App />, element);

@@ -14,10 +14,13 @@
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
-    "webpack": "^5.89.0"
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack -w --config webpack.config.js"
+    "watch": "webpack -w --config webpack.config.js",
+    "dev": "webpack serve --config webpack.config.js"
   }
 }

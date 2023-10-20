@@ -1,12 +1,22 @@
 const path = require("path");
 const HTMLPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin")
+const CopyPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const mode = process.env.production ? "production" : "development";
 
 module.exports = {
     entry: {
         index: "./src/index.tsx"
     },
-    mode: "production",
+    mode,
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
+        compress: true,
+        port: 9000,
+    },
     module: {
         rules: [
             {
@@ -33,27 +43,40 @@ module.exports = {
     plugins: [
         new CopyPlugin({
             patterns: [
-                { from: "manifest.json", to: "../manifest.json" },
+                {
+                    from: "public/**/*",
+                    to: "./",
+                    globOptions: {
+                        dot: true,
+                        gitignore: true,
+                        ignore: [],
+                    },
+                },
+                {
+                    from: "manifest.json",
+                    to: "./"
+                }
             ],
         }),
-        ...getHtmlPlugins(["index"]),
+        new HtmlWebpackPlugin()
     ],
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
     },
     output: {
-        path: path.join(__dirname, "dist/js"),
+        path: path.join(__dirname, "dist"),
         filename: "[name].js",
+        clean: true
     },
 };
 
-function getHtmlPlugins(chunks) {
-    return chunks.map(
-        (chunk) =>
-            new HTMLPlugin({
-                title: "React extension",
-                filename: `${chunk}.html`,
-                chunks: [chunk],
-            })
-    );
-}
+// function getHtmlPlugins(chunks) {
+//     return chunks.map(
+//         (chunk) =>
+//             new HTMLPlugin({
+//                 title: "React extension",
+//                 filename: `${chunk}.html`,
+//                 chunks: [chunk],
+//             })
+//     );
+// }
