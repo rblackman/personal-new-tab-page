@@ -1,0 +1,59 @@
+:root {
+	--time-fg-opacity: 1;
+	--time-bg-opacity: 0.8;
+	--time-fg: 0;
+	--time-bg: 255;
+	--time-color: rgba(var(--time-fg), var(--time-fg), var(--time-fg), var(--time-fg-opacity));
+	--time-background: rgba(var(--time-bg), var(--time-bg), var(--time-bg), var(--time-bg-opacity));
+}
+
+.time {
+	--width: 200px;
+	color: var(--time-color);
+	background: var(--time-background);
+	position: fixed;
+	top: 0;
+	left: 50%;
+	width: var(--width);
+	margin: 0 0 0 calc(var(--width) / -2);
+	font-size: 2rem;
+	text-align: center;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	padding: 0.25rem;
+}
+
+.og,
+.dots,
+.prism,
+.rainbow,
+.scales,
+.cheese,
+.triangle {
+	--time-fg: 255;
+	--time-bg: 0;
+}
+
+.og {
+	--time-bg-opacity: 0.1;
+}
+
+.dots {
+	--time-bg-opacity: 0.45;
+}
+
+.prism {
+	--time-bg-opacity: 0.35;
+}
+
+.rainbow {
+	--time-bg-opacity: 0.4;
+}
+
+.scales {
+	--time-bg-opacity: 0.4;
+}
+
+.cheese {
+	--time-bg-opacity: 0.4;
+}

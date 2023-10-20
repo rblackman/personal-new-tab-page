@@ -1,0 +1,28 @@
+.link {
+	--link-color: var(--blue);
+	--link-size: 1.75rem;
+	list-style: none;
+	margin: 0 0 0.75rem 0;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.a {
+	color: var(--link-color);
+	height: var(--link-size);
+	line-height: var(--link-size);
+	font-size: 1.125rem;
+	flex: 0 0 auto;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	text-decoration: none;
+}
+
+a:hover .text {
+	text-decoration: underline;
+}
+
+.text {
+	flex: 1 1 auto;
+}

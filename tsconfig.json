@@ -1,21 +1,27 @@
 {
 	"compilerOptions": {
-		"target": "es5",
-		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
-		"skipLibCheck": true,
-		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
-		"strict": true,
+		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"noFallthroughCasesInSwitch": true,
+		"isolatedModules": true,
+		"jsx": "react-jsx",
+		"lib": ["dom", "dom.iterable", "esnext"],
 		"module": "esnext",
 		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react-jsx"
+		"noFallthroughCasesInSwitch": true,
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules"
+			}
+		],
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "es5"
 	},
+	"include": ["src", "**/*.ts", "**/*.tsx"],
 	"paths": {
 		"@/*": ["./src/*"],
 		"@components/*": ["./src/components/*"],
@@ -23,6 +29,5 @@
 		"@hooks/*": ["./src/hooks/*"],
 		"@t/*": ["./src/types/*"]
 	},
-	"include": ["src", "**/*.ts", "**/*.tsx"],
 	"types": ["node"]
 }

@@ -1,0 +1,11 @@
+.icon {
+	--icon-size: 1.75rem;
+	display: block;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	background-size: cover;
+	background-position: center center;
+	margin: 0 0.5rem 0 0;
+	flex: 0 0 auto;
+	margin: 0 0.5rem 0 0;
+}

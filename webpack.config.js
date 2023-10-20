@@ -4,13 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const mode = process.env.production ? 'production' : 'development';
+const isProd = mode === 'production';
 
 module.exports = {
 	entry: {
 		index: './src/index.tsx'
 	},
 	mode,
-	devtool: mode ? 'source-map' : 'inline-source-map',
+	devtool: isProd ? 'source-map' : 'inline-source-map',
 	devServer: {
 		static: {
 			directory: path.join(__dirname, 'public')
@@ -33,9 +34,19 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
+				test: /\.css$/,
 				exclude: /node_modules/,
-				test: /\.css$/i,
-				use: ['style-loader', 'css-loader']
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							modules: true,
+							url: false
+						}
+					}
+				]
 			}
 		]
 	},
@@ -57,11 +68,15 @@ module.exports = {
 				}
 			]
 		}),
-		new HtmlWebpackPlugin(),
+		new HtmlWebpackPlugin({
+			inject: true,
+			filename: 'index.html',
+			minify: isProd
+		}),
 		new ESLintPlugin()
 	],
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js']
+		extensions: ['.tsx', '.ts', '.js', '.css']
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
@@ -69,14 +84,3 @@ module.exports = {
 		clean: true
 	}
 };
-
-// function getHtmlPlugins(chunks) {
-//     return chunks.map(
-//         (chunk) =>
-//             new HTMLPlugin({
-//                 title: "React extension",
-//                 filename: `${chunk}.html`,
-//                 chunks: [chunk],
-//             })
-//     );
-// }

@@ -1,0 +1,75 @@
+:root {
+	--white-r: 255;
+	--white-g: 255;
+	--white-b: 255;
+	--white-a: 1;
+	--white: rgb(var(--white-r), var(--white-g), var(--white-b), var(--white-a));
+
+	--black-r: 0;
+	--black-g: 0;
+	--black-b: 0;
+	--black-a: 1;
+	--black: rgb(var(--black-r), var(--black-g), var(--black-b), var(--black-a));
+
+	--blue-r: 50;
+	--blue-g: 122;
+	--blue-b: 185;
+	--blue-a: 1;
+	--blue: rgb(var(--blue-r), var(--blue-g), var(--blue-b), var(--blue-a));
+
+	--red-r: 192;
+	--red-g: 57;
+	--red-b: 43;
+	--red-a: 1;
+	--red: rgb(var(--red-r), var(--red-g), var(--red-b), var(--red-a));
+
+	--teal-r: 0;
+	--teal-g: 191;
+	--teal-b: 197;
+	--teal-a: 1;
+	--teal: rgba(var(--teal-r), var(--teal-g), var(--teal-b), var(--teal-a));
+
+	--green-r: 39;
+	--green-g: 174;
+	--green-b: 96;
+	--green-a: 1;
+	--green: rgba(var(--green-r), var(--green-g), var(--green-b), var(--green-a));
+
+	--theme-a: var(--blue-a);
+	--theme: rgba(var(--blue-r), var(--blue-g), var(--blue-b), var(--blue-a));
+
+	--theme-bg-a: var(--black-a);
+	--theme-bg: rgba(var(--black-r), var(--black-g), var(--black-b), var(--black-a));
+
+	--theme-fg-a: var(--white-a);
+	--theme-fg: rgba(var(--white-r), var(--white-g), var(--white-b), var(--theme-fg-a));
+}
+
+html,
+body {
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	place-content: center;
+}
+
+body {
+	font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+	font-weight: 200;
+	font-size: 2rem;
+	margin: 0 0 1rem 0;
+}
+
+.mono,
+code,
+pre {
+	font-family: 'Source Code Pro', monospace;
+}

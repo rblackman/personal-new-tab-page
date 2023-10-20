@@ -50,7 +50,7 @@ module.exports = {
 				singleQuote: true,
 				tabWidth: 2,
 				useTabs: true,
-				printWidth: 120,
+				printWidth: 160,
 				endOfLine: 'auto',
 				quoteProps: 'consistent',
 				jsxSingleQuote: false,
@@ -59,7 +59,9 @@ module.exports = {
 				arrowParens: 'always'
 			}
 		],
-		'max-len': [2, 120]
+		'max-len': [2, 160],
+		'linebreak-style': 0,
+		'react/jsx-indent-props': [2, 'tab']
 	},
 	settings: {
 		'import/resolver': {
