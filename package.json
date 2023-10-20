@@ -1,9 +1,16 @@
 {
+	"author": {
+		"name": "Ryan Blackman",
+		"url": "https://github.com/rblackman"
+	},
 	"dependencies": {
+		"clsx": "^2.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^18.0.0",
+		"@commitlint/config-conventional": "^18.0.0",
 		"@types/chrome": "^0.0.248",
 		"@types/node": "^20.8.7",
 		"@types/react": "^18.2.31",
@@ -24,6 +31,8 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-webpack-plugin": "^4.0.1",
 		"html-webpack-plugin": "^5.5.3",
+		"husky": "^8.0.3",
+		"lint-staged": "^15.0.2",
 		"style-loader": "^3.3.3",
 		"ts-loader": "^9.5.0",
 		"typescript": "^5.2.2",
@@ -31,10 +40,22 @@
 		"webpack-cli": "^5.1.4",
 		"webpack-dev-server": "^4.15.1"
 	},
+	"engines": {
+		"node": ">=21.0.0",
+		"npm": ">=10.2.0"
+	},
+	"license": "apache-2.0",
+	"name": "personal-new-tab-page",
+	"private": true,
+	"repository": "github:rblackman/personal-new-tab-page",
 	"scripts": {
 		"build": "webpack --config webpack.config.js",
-		"watch": "webpack -w --config webpack.config.js",
-		"dev": "webpack serve --config webpack.config.js",
-		"lint": "eslint --fix --ext .js,.jsx,.ts,.tsx ."
+		"dev": "cross-env NODE_OPTIONS='--inspect' webpack serve --config webpack.config.js",
+		"lint": "npm run lint:type && npm run lint:prettier && npm run lint:eslint",
+		"lint:eslint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+		"lint:prettier": "prettier --write .",
+		"lint:type": "tsc --noEmit",
+		"prepare": "husky install",
+		"watch": "webpack -w --config webpack.config.js"
 	}
 }

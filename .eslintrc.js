@@ -3,6 +3,16 @@ module.exports = {
 		browser: true,
 		es2021: true
 	},
+	globals: {
+		React: 'readonly'
+	},
+	ignorePatterns: ['**/stories/*'],
+	overrides: [
+		{
+			files: ['*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+			rules: { 'storybook/hierarchy-separator': 'error' }
+		}
+	],
 	extends: ['plugin:react/recommended', 'airbnb'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -14,7 +24,7 @@ module.exports = {
 	},
 	plugins: ['react', '@typescript-eslint', 'prettier'],
 	rules: {
-		indent: [2, 'tab'],
+		'indent': [2, 'tab'],
 		'no-tabs': 0,
 		'react/jsx-indent': [2, 'tab'],
 		'react/react-in-jsx-scope': 'off',
@@ -31,15 +41,25 @@ module.exports = {
 				tsx: 'never'
 			}
 		],
+		'quote-props': ['error', 'consistent'],
 		'prettier/prettier': [
 			'error',
 			{
 				trailingComma: 'none',
 				semi: true,
 				singleQuote: true,
-				editorconfig: true
+				tabWidth: 4,
+				useTabs: true,
+				printWidth: 120,
+				endOfLine: 'auto',
+				quoteProps: 'consistent',
+				jsxSingleQuote: false,
+				jsxBracketSameLine: false,
+				bracketSpacing: true,
+				arrowParens: 'always'
 			}
-		]
+		],
+		'max-len': [2, 120]
 	},
 	settings: {
 		'import/resolver': {
