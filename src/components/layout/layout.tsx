@@ -19,9 +19,9 @@ export default function Layout({ children, bg, bottom }: LayoutProps) {
 
 	return (
 		<Bg bg={bg}>
-			<main className={styles.container}>
+			<div className={styles.container}>
 				<div className={classes}>{children}</div>
-			</main>
+			</div>
 		</Bg>
 	);
 }

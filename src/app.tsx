@@ -1,24 +1,36 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import data from '../data.json';
+import { useEffect, useMemo, useState } from 'react';
 import LinkListType from '../types/linkListType';
 import { BgOptionsType } from './components/bg/bg';
 import Layout from './components/layout/layout';
 import LinkList from './components/linkList/linkList';
 import CurrentTime from './currentTime';
 import './global.css';
+import { loadOptionsObject } from './helpers/storage';
 
 interface Props {
 	bg: BgOptionsType;
 }
 
 export default function App({ bg }: Props) {
-	const links = data as LinkListType[];
+	const [options, setOptions] = useState<LinkListType[] | null>(null);
+
+	useEffect(() => {
+		async function firstLoad() {
+			const settingsData = await loadOptionsObject();
+			setOptions(settingsData);
+		}
+		firstLoad();
+	}, []);
+
+	const left = useMemo(() => (options ? options[0] : null), [options]);
+	const right = useMemo(() => (options ? options[1] : null), [options]);
 
 	return (
 		<Layout bg={bg}>
 			<CurrentTime />
-			<LinkList {...links[0]} placement="left" />
-			<LinkList {...links[1]} placement="right" />
+			{left && <LinkList {...left} placement="left" />}
+			{right && <LinkList {...right} placement="right" />}
 		</Layout>
 	);
 }

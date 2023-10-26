@@ -29,5 +29,5 @@
 		"@hooks/*": ["./src/hooks/*"],
 		"@t/*": ["./src/types/*"]
 	},
-	"types": ["node"]
+	"types": ["node", "chrome"]
 }

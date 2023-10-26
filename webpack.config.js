@@ -8,7 +8,8 @@ const isProd = mode === 'production';
 
 module.exports = {
 	entry: {
-		index: './src/index.tsx'
+		index: './src/index.tsx',
+		options: './src/options.tsx'
 	},
 	mode,
 	devtool: isProd ? 'source-map' : 'inline-source-map',
@@ -71,7 +72,16 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			inject: true,
 			filename: 'index.html',
-			minify: isProd
+			minify: isProd,
+			chunks: ['index'],
+			template: 'src/template.html'
+		}),
+		new HtmlWebpackPlugin({
+			inject: true,
+			filename: 'options.html',
+			minify: isProd,
+			chunks: ['options'],
+			template: 'src/template.html'
 		}),
 		new ESLintPlugin()
 	],
