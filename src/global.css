@@ -35,6 +35,12 @@
 	--green-a: 1;
 	--green: rgba(var(--green-r), var(--green-g), var(--green-b), var(--green-a));
 
+	--grey-r: 160;
+	--grey-g: 160;
+	--grey-b: 160;
+	--grey-a: 1;
+	--grey: rgba(var(--grey-r), var(--grey-g), var(--grey-b), var(--grey-a));
+
 	--theme-a: var(--blue-a);
 	--theme: rgba(var(--blue-r), var(--blue-g), var(--blue-b), var(--blue-a));
 
@@ -43,6 +49,8 @@
 
 	--theme-fg-a: var(--white-a);
 	--theme-fg: rgba(var(--white-r), var(--white-g), var(--white-b), var(--theme-fg-a));
+
+	--animate-duration: 0.2s;
 }
 
 * {

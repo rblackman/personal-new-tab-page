@@ -5,7 +5,7 @@ import styles from './layout.module.css';
 
 export interface LayoutProps {
 	children: ReactNode;
-	bg: BgOptionsType;
+	bg: BgOptionsType | 'none';
 	bottom?: true;
 }
 
@@ -14,6 +14,7 @@ export default function Layout({ children, bg, bottom }: LayoutProps) {
 
 	const classes = clsx({
 		[styles.layout]: true,
+		[styles.none]: bg === 'none',
 		[styles.bottom]: hasBottom
 	});
 

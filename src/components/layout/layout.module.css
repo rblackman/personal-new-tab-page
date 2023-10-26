@@ -18,6 +18,10 @@
 	align-items: stretch;
 }
 
+.layout.none {
+	display: block;
+}
+
 .bottom {
 	grid-template-rows: 1fr auto;
 	grid-template-areas: 'left right' 'footer footer';

@@ -42,3 +42,8 @@
 	background-repeat: repeat;
 	background-size: 180px;
 }
+
+.noBg {
+	background-image: none;
+	background-color: var(--white);
+}

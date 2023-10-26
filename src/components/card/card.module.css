@@ -8,6 +8,11 @@
 	backdrop-filter: blur(0.25rem);
 }
 
+.left,
+.right {
+	min-width: 30vw;
+}
+
 .left {
 	grid-area: left;
 }

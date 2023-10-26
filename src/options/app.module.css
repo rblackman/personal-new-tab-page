@@ -1,0 +1,30 @@
+.optionsWrap {
+	min-width: 90vw;
+	min-height: 90vh;
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: 'title' 'input' 'actions';
+}
+
+.title {
+	grid-area: title;
+}
+
+.input {
+	grid-area: input;
+}
+
+.actions {
+	grid-area: actions;
+	display: grid;
+	grid-gap: 0.5rem;
+	grid-template-columns: auto auto;
+	grid-template-rows: 1fr;
+	justify-content: flex-end;
+}
+
+.actions .button + .button {
+	margin-left: 1rem;
+}

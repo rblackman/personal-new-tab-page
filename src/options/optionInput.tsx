@@ -1,44 +1,29 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-unused-vars */
 /* eslint-disable object-curly-newline */
 
-import { ChangeEvent, useCallback, useEffect, useState } from 'react';
-import { loadOptionsAsString, saveOptionsString } from '../helpers/storage';
+import { ChangeEvent, useCallback } from 'react';
+import classes from './optionsInput.module.css';
 
-export default function OptionInput() {
-	const [value, setValue] = useState('');
+interface Props {
+	value: string;
+	onChange: (value: string) => void;
+}
 
-	const handleChange = useCallback(({ target: { value: newValue } }: ChangeEvent<HTMLTextAreaElement>) => {
-		setValue(newValue);
-	}, []);
-
-	const save = useCallback(async () => {
-		await saveOptionsString(value);
-	}, [value]);
-
-	const cancel = useCallback(async () => {
-		const data = await loadOptionsAsString();
-		setValue(data);
-	}, []);
-
-	useEffect(() => {
-		async function firstLoad() {
-			const data = await loadOptionsAsString();
-			setValue(data);
-		}
-		firstLoad();
-	}, []);
+export default function OptionInput({ value, onChange }: Props) {
+	const change = useCallback(
+		({ target: { value: newVal } }: ChangeEvent<HTMLTextAreaElement>) => {
+			onChange(newVal);
+		},
+		[onChange]
+	);
 
 	return (
-		<>
-			<label htmlFor="option-input">
+		<div className={classes.wrap}>
+			<label htmlFor="option-input" className={classes.label}>
 				Columns (JSON)
-				<textarea id="option-input" onChange={handleChange} value={value} />
 			</label>
-			<button type="button" onClick={cancel}>
-				Cancel
-			</button>
-			<button type="button" onClick={save}>
-				Save
-			</button>
-		</>
+			<textarea className={classes.ta} id="option-input" onChange={change} value={value} />
+		</div>
 	);
 }

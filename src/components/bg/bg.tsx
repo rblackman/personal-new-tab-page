@@ -7,7 +7,7 @@ export type BgOptionsType = 'clock' | 'dots' | 'og' | 'prism' | 'scales' | 'chee
 export const BgOptions: BgOptionsType[] = ['clock', 'dots', 'og', 'prism', 'scales', 'cheese'];
 
 export interface BgProps {
-	bg: BgOptionsType;
+	bg: BgOptionsType | 'none';
 	children: ReactNode;
 }
 
@@ -19,7 +19,8 @@ export default function Bg({ bg, children }: BgProps) {
 		[styles.og]: bg === 'og',
 		[styles.prism]: bg === 'prism',
 		[styles.scales]: bg === 'scales',
-		[styles.cheese]: bg === 'cheese'
+		[styles.cheese]: bg === 'cheese',
+		[styles.noBg]: bg === 'none'
 	});
 
 	return <div className={classes}>{children}</div>;
