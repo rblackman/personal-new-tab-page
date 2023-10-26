@@ -19,6 +19,7 @@ export type IconType =
 	| 'polygon'
 	| 'reddit'
 	| 'sc'
+	| 'snipe'
 	| 'verge'
 	| 'verizon'
 	| 'wirecutter'

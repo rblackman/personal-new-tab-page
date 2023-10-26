@@ -7,9 +7,10 @@ import classes from './linkList.module.css';
 interface LinkListProps extends LinkListType {
 	placement: 'left' | 'right';
 }
-export default function LinkList({ links, placement }: LinkListProps) {
+export default function LinkList({ title, links, placement }: LinkListProps) {
 	return (
 		<Card placement={placement}>
+			<h2 className={classes.heading}>{title}</h2>
 			<ul className={classes.linkList}>
 				{links.map(({ text, ...props }) => (
 					<Link key={text} text={text} {...props} />

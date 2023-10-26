@@ -18,6 +18,7 @@ export default function App({ bg }: Props) {
 		<Layout bg={bg}>
 			<CurrentTime />
 			<LinkList {...links[0]} placement="left" />
+			<LinkList {...links[1]} placement="right" />
 		</Layout>
 	);
 }
