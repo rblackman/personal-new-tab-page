@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-unused-vars */
-/* eslint-disable object-curly-newline */
-
 import { ChangeEvent, useCallback } from 'react';
 import classes from './optionsInput.module.css';
 
@@ -9,6 +5,8 @@ interface Props {
 	value: string;
 	onChange: (value: string) => void;
 }
+
+const id = 'option-input';
 
 export default function OptionInput({ value, onChange }: Props) {
 	const change = useCallback(
@@ -20,10 +18,10 @@ export default function OptionInput({ value, onChange }: Props) {
 
 	return (
 		<div className={classes.wrap}>
-			<label htmlFor="option-input" className={classes.label}>
+			<label htmlFor={id} className={classes.label}>
 				Columns (JSON)
 			</label>
-			<textarea className={classes.ta} id="option-input" onChange={change} value={value} />
+			<textarea className={classes.ta} id={id} onChange={change} value={value} />
 		</div>
 	);
 }

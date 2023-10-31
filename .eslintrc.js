@@ -13,7 +13,7 @@ module.exports = {
 			rules: { 'storybook/hierarchy-separator': 'error' }
 		}
 	],
-	extends: ['plugin:react/recommended', 'airbnb'],
+	extends: ['eslint:recommended', 'plugin:import/recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {
@@ -22,26 +22,8 @@ module.exports = {
 		ecmaVersion: 12,
 		sourceType: 'module'
 	},
-	plugins: ['react', '@typescript-eslint', 'prettier'],
+	plugins: ['react', 'import', '@typescript-eslint', 'prettier'],
 	rules: {
-		'indent': [2, 'tab'],
-		'no-tabs': 0,
-		'react/jsx-indent': [2, 'tab'],
-		'react/react-in-jsx-scope': 'off',
-		'comma-dangle': ['error', 'never'],
-		'react/jsx-uses-react': 'off',
-		'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
-		'import/extensions': [
-			'error',
-			'ignorePackages',
-			{
-				js: 'never',
-				jsx: 'never',
-				ts: 'never',
-				tsx: 'never'
-			}
-		],
-		'quote-props': ['error', 'consistent'],
 		'prettier/prettier': [
 			'error',
 			{
@@ -58,17 +40,16 @@ module.exports = {
 				bracketSpacing: true,
 				arrowParens: 'always'
 			}
-		],
-		'max-len': [2, 160],
-		'linebreak-style': 0,
-		'react/jsx-indent-props': [2, 'tab'],
-		'@typescript-eslint/object-curly-spacing': [2, 'always']
+		]
 	},
 	settings: {
 		'import/resolver': {
 			node: {
 				extensions: ['.js', '.jsx', '.ts', '.tsx']
 			}
+		},
+		'react': {
+			version: 'detect'
 		}
 	}
 };

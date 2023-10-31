@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect, useMemo, useState } from 'react';
-import LinkListType from '../types/linkListType';
-import { BgOptionsType } from './components/bg/bg';
-import Layout from './components/layout/layout';
-import LinkList from './components/linkList/linkList';
+import LinkListType from '../../../types/linkListType';
+import { BgOptionsType } from '../../components/bg/bg';
+import Layout from '../../components/layout/layout';
+import LinkList from '../../components/linkList/linkList';
+import '../../global.css';
+import { loadOptionsObject } from '../../helpers/storage';
 import CurrentTime from './currentTime';
-import './global.css';
-import { loadOptionsObject } from './helpers/storage';
 
 interface Props {
 	bg: BgOptionsType;

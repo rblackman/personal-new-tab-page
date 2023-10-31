@@ -1,10 +1,8 @@
-/* eslint-disable object-curly-newline */
-
 import { useCallback, useEffect, useState } from 'react';
-import Button from '../components/button/button';
-import Layout from '../components/layout/layout';
-import '../global.css';
-import { loadOptionsAsString, saveOptionsString } from '../helpers/storage';
+import Button from '../../components/button/button';
+import Layout from '../../components/layout/layout';
+import '../../global.css';
+import { loadOptionsAsString, saveOptionsString } from '../../helpers/storage';
 import classes from './app.module.css';
 import OptionInput from './optionInput';
 
@@ -29,7 +27,7 @@ export default function App() {
 	}, []);
 
 	return (
-		<Layout bg="none">
+		<Layout bg="none" singleColumn>
 			<div className={classes.optionsWrap}>
 				<h1 className={classes.title}>Options</h1>
 				<OptionInput value={value} onChange={setValue} />

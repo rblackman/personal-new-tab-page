@@ -7,13 +7,15 @@ export interface LayoutProps {
 	children: ReactNode;
 	bg: BgOptionsType | 'none';
 	bottom?: true;
+	singleColumn?: boolean;
 }
 
-export default function Layout({ children, bg, bottom }: LayoutProps) {
+export default function Layout({ children, bg, bottom, singleColumn }: LayoutProps) {
 	const hasBottom = bottom ?? false;
 
 	const classes = clsx({
 		[styles.layout]: true,
+		[styles.singleColumn]: singleColumn,
 		[styles.none]: bg === 'none',
 		[styles.bottom]: hasBottom
 	});
@@ -28,5 +30,6 @@ export default function Layout({ children, bg, bottom }: LayoutProps) {
 }
 
 Layout.defaultProps = {
-	bottom: undefined
+	bottom: undefined,
+	singleColumn: false
 };

@@ -1,12 +1,8 @@
 import path from 'path';
 
-const buildEslintCommand = (filenames) => [
-	`eslint --fix  ${filenames.map((f) => path.relative(process.cwd(), f)).join('  ')}`
-];
+const buildEslintCommand = (filenames) => [`eslint --fix  ${filenames.map((f) => path.relative(process.cwd(), f)).join('  ')}`];
 
-const buildPrettierCommand = (filenames) => [
-	`prettier ${filenames.map((f) => path.relative(process.cwd(), f)).join(' ')} --write`
-];
+const buildPrettierCommand = (filenames) => [`prettier ${filenames.map((f) => path.relative(process.cwd(), f)).join(' ')} --write`];
 
 const config = {
 	'**/*.(ts|tsx)': () => 'npx tsc --noEmit',

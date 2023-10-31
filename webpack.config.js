@@ -8,8 +8,8 @@ const isProd = mode === 'production';
 
 module.exports = {
 	entry: {
-		index: './src/index.tsx',
-		options: './src/options.tsx'
+		index: './src/pages/newTab/index.tsx',
+		options: './src/pages/options/index.tsx'
 	},
 	mode,
 	devtool: isProd ? 'source-map' : 'inline-source-map',
