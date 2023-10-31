@@ -1,3 +1,5 @@
-type TabMessage = 'Success' | 'Error';
+type TabMessage = {
+	message: 'Success' | 'Error';
+};
 
 export default TabMessage;

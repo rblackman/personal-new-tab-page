@@ -1,5 +1,6 @@
 import { atom } from 'recoil';
 import ApiResponse from '../types/api/apiResponse';
+import LinkListType from '../types/linkListType';
 import { BgOptionsType } from './components/bg/bg';
 
 export const ApiDataState = atom<ApiResponse | null>({
@@ -20,4 +21,9 @@ export const ApiErrorState = atom<string | null>({
 export const BackgroundState = atom<BgOptionsType>({
 	key: 'BackgroundState',
 	default: 'clock'
+});
+
+export const OptionsState = atom<LinkListType[] | null>({
+	key: 'OptionsState',
+	default: null
 });

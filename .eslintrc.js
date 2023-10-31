@@ -13,7 +13,14 @@ module.exports = {
 			rules: { 'storybook/hierarchy-separator': 'error' }
 		}
 	],
-	extends: ['eslint:recommended', 'plugin:import/recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+	extends: [
+		'eslint:recommended',
+		'plugin:import/recommended',
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:@typescript-eslint/recommended',
+		'prettier'
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {

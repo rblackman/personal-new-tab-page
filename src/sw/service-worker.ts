@@ -7,7 +7,29 @@ import { saveSpursData } from '../helpers/storage';
 const alarmName = 'updateAlarm';
 
 function messageTabs(message: TabMessage): void {
-	// todo
+	chrome.tabs.query({ title: '| New Tab |' }, (tabs) => {
+		if (tabs) {
+			for (let i = 0; i < tabs.length; i++) {
+				const tab = tabs[i];
+				if (tab) {
+					const { id } = tab;
+					if (id) {
+						chrome.tabs.sendMessage(id, message);
+					}
+				}
+			}
+			tabs.forEach((tab) => {
+				if (tab) {
+					const { id } = tab;
+					if (id) {
+						chrome.tabs.sendMessage(id, message);
+						return;
+					}
+				}
+				console.warn('Failed to message tab', { tab });
+			});
+		}
+	});
 }
 
 async function updateData(): Promise<void> {
@@ -15,13 +37,13 @@ async function updateData(): Promise<void> {
 	console.log('fetched data', { data });
 	if (Api.isErrorResponse(data)) {
 		console.error(data);
-		messageTabs('Error');
+		messageTabs({ message: 'Error' });
 		return;
 	}
 
 	saveSpursData(data);
 
-	messageTabs('Success');
+	messageTabs({ message: 'Success' });
 }
 
 async function startAlarm() {
@@ -35,15 +57,10 @@ chrome.alarms.onAlarm.addListener(({ name }) => {
 	} else {
 		console.error('Unknown alarm name', { name });
 	}
+	startAlarm();
 });
 
-chrome.tabs.onCreated.addListener(function ({ url }) {
-	if (!url || url.length === 0) {
-		updateData();
-		console.log('new tab');
-	} else {
-		console.log('new tab with url', { url });
-	}
+chrome.runtime.onInstalled.addListener(() => {
+	startAlarm();
+	updateData();
 });
-
-startAlarm();
