@@ -9,7 +9,8 @@ const isProd = mode === 'production';
 module.exports = {
 	entry: {
 		index: './src/pages/newTab/index.tsx',
-		options: './src/pages/options/index.tsx'
+		options: './src/pages/options/index.tsx',
+		sw: './src/sw/service-worker.ts'
 	},
 	mode,
 	devtool: isProd ? 'source-map' : 'inline-source-map',

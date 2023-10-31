@@ -1,9 +1,14 @@
 {
 	"author": "Ryan Blackman",
+	"background": {
+		"service_worker": "sw.js",
+		"type": "module"
+	},
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
 	"description": "Personal new-tab page.",
+	"host_permissions": ["https://tottenham-api-git-development-rblackman.vercel.app/*", "https://tottenham-api.vercel.app/*"],
 	"icons": {
 		"32": "public/logo-32.png",
 		"64": "public/logo-64.png",
@@ -11,6 +16,7 @@
 		"512": "public/logo-512.png"
 	},
 	"manifest_version": 3,
+	"minimum_chrome_version": "118",
 	"name": "New Tab",
 	"options_page": "options.html",
 	"permissions": ["alarms", "storage", "tabs"],
