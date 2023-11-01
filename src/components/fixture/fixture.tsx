@@ -1,6 +1,9 @@
+import { useMemo } from 'react';
 import Result, { isResult } from '../../../types/api/result';
 import Upcoming from '../../../types/api/upcoming';
+import highlightTeam from '../../consts/highlightTeam';
 import MatchDate from './date';
+import classes from './fixture.module.css';
 import MatchScore from './matchScore';
 import Team from './team';
 
@@ -12,18 +15,19 @@ export default function Fixture({ fixture }: Props) {
 	const hasScore = isResult(fixture);
 
 	const {
-		homeTeam,
-		logo: { team: logo, opponent: opponentLogo },
-		opponent: opponentName,
+		home: { shortName: homeName, logo: homeLogo, id: homeId },
+		away: { shortName: awayName, logo: awayLogo },
 		date
 	} = fixture;
 
+	const isHome = useMemo(() => homeId === highlightTeam, [homeId]);
+
 	return (
-		<div>
-			<Team name={homeTeam ? 'Spurs' : opponentName} logo={homeTeam ? logo : opponentLogo} />
+		<div className={classes.matchup}>
+			<Team name={homeName} logo={homeLogo} />
 			{!hasScore && <MatchDate date={date} />}
-			{hasScore && <MatchScore fixture={fixture as Result} homeTeamGoodGuys={homeTeam} />}
-			<Team name={homeTeam ? opponentName : 'Spurs'} logo={homeTeam ? opponentLogo : logo} />
+			{hasScore && <MatchScore fixture={fixture as Result} homeTeamGoodGuys={isHome} />}
+			<Team name={awayName} logo={awayLogo} />
 		</div>
 	);
 }

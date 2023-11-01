@@ -1,9 +1,6 @@
-import Form from './form';
-
 type Score = {
-	score: number;
-	opponent: number;
-	result: Form;
+	home: number;
+	away: number;
 };
 
 export default Score;

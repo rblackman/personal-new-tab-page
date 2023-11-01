@@ -1,14 +1,25 @@
-import Logo from './logo';
 import Status from './status';
+
+export type Team = {
+	id: number;
+	name: string;
+	shortName: string;
+	abbreviation: string;
+	logo: string;
+};
+
+export type Competition = {
+	name: string;
+	logo: string;
+};
 
 type Fixture = {
 	date: string;
-	homeTeam: boolean;
+	home: Team;
+	away: Team;
 	venue: string;
-	opponent: string;
-	competition: string;
+	competition: Competition;
 	status: Status;
-	logo: Logo;
 };
 
 export default Fixture;

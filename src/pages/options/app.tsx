@@ -3,7 +3,7 @@ import Button from '../../components/button/button';
 import Layout from '../../components/layout/layout';
 import '../../global.css';
 import { loadOptionsAsString, saveOptionsString } from '../../helpers/storage';
-import classes from './app.module.css';
+import styles from './app.module.css';
 import OptionInput from './optionInput';
 
 export default function App() {
@@ -28,10 +28,10 @@ export default function App() {
 
 	return (
 		<Layout bg="none" singleColumn>
-			<div className={classes.optionsWrap}>
-				<h1 className={classes.title}>Options</h1>
+			<div className={styles.optionsWrap}>
+				<h1 className={styles.title}>Options</h1>
 				<OptionInput value={value} onChange={setValue} />
-				<div className={classes.actions}>
+				<div className={styles.actions}>
 					<Button buttonType="button" variant="teal" outline callback={cancel}>
 						Cancel
 					</Button>

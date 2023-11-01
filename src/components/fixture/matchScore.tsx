@@ -14,23 +14,15 @@ function Score({ score, bold }: { score: number; bold: boolean }) {
 
 export default function MatchScore({
 	fixture: {
-		score: { score, opponent }
+		score: { home, away }
 	},
 	homeTeamGoodGuys
 }: Props) {
-	const gg = <Score score={score} bold={true} />;
-	const bg = <Score score={opponent} bold={false} />;
-
-	if (homeTeamGoodGuys) {
-		return (
-			<div>
-				{gg} &ndash; {bg}
-			</div>
-		);
-	}
 	return (
 		<div>
-			{bg} &ndash; {gg}
+			<Score score={home} bold={homeTeamGoodGuys} />
+			&ndash;
+			<Score score={away} bold={!homeTeamGoodGuys} />
 		</div>
 	);
 }
