@@ -23,11 +23,16 @@ export default function Fixture({ fixture }: Props) {
 	const isHome = useMemo(() => homeId === highlightTeam, [homeId]);
 
 	return (
-		<div className={styles.matchup}>
-			<Team name={homeName} logo={homeLogo} />
-			{!hasScore && <MatchDate date={date} />}
-			{hasScore && <MatchScore fixture={fixture as Result} homeTeamGoodGuys={isHome} />}
-			<Team name={awayName} logo={awayLogo} />
+		<div className={styles.matchupWrap}>
+			<div className={styles.matchup}>
+				<Team name={homeName} logo={homeLogo} team="home" />
+				<span className={styles.vs}>vs.</span>
+				<Team name={awayName} logo={awayLogo} team="away" />
+			</div>
+			<div>
+				{hasScore && <MatchScore fixture={fixture as Result} homeTeamGoodGuys={isHome} />}
+				<MatchDate date={date} />
+			</div>
 		</div>
 	);
 }
