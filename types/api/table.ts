@@ -1,3 +1,5 @@
+import StandingModifier from './standingModifier';
+
 export type TeamInfo = {
 	id: number;
 	logo: string;
@@ -12,12 +14,12 @@ export type TableStats = {
 	goalsFor: number;
 	goalsAgainst: number;
 	points: number;
-	description: string | null;
 	form: string;
 	win: number;
 	draw: number;
 	loss: number;
 	gamesPlayed: number;
+	standingModifier: StandingModifier;
 };
 
 export type Standing = {
