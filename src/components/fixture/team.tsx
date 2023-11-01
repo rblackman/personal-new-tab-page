@@ -1,4 +1,4 @@
-import classes from './team.module.css';
+import styles from './team.module.css';
 
 interface Props {
 	name: string;
@@ -8,8 +8,8 @@ interface Props {
 export default function Team({ name, logo }: Props) {
 	return (
 		<div>
-			<img src={logo} alt={`${name} logo`} className={classes.img} />
-			<h2 className={classes.teamName}>{name}</h2>
+			<img src={logo} alt={`${name} logo`} className={styles.img} />
+			<h2 className={styles.teamName}>{name}</h2>
 		</div>
 	);
 }

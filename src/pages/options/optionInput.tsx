@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback } from 'react';
-import classes from './optionsInput.module.css';
+import styles from './optionsInput.module.css';
 
 interface Props {
 	value: string;
@@ -17,11 +17,11 @@ export default function OptionInput({ value, onChange }: Props) {
 	);
 
 	return (
-		<div className={classes.wrap}>
-			<label htmlFor={id} className={classes.label}>
+		<div className={styles.wrap}>
+			<label htmlFor={id} className={styles.label}>
 				Columns (JSON)
 			</label>
-			<textarea className={classes.ta} id={id} onChange={change} value={value} />
+			<textarea className={styles.ta} id={id} onChange={change} value={value} />
 		</div>
 	);
 }

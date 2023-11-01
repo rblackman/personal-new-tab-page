@@ -3,7 +3,7 @@ import Card from '../../components/card/card';
 import Fixture from '../../components/fixture/fixture';
 import LeagueTable from '../../components/leagueTable/leagueTable';
 import { ApiDataState, HasErrorSelector, LastNFixtureSelectorFamily, NextNFixtureSelector } from '../../state';
-import classes from './spurs.module.css';
+import styles from './spurs.module.css';
 
 export default function Spurs() {
 	const data = useRecoilValue(ApiDataState);
@@ -20,7 +20,7 @@ export default function Spurs() {
 
 	return (
 		<Card placement="footer">
-			<div className={classes.infoGrid}>
+			<div className={styles.infoGrid}>
 				<LeagueTable standings={abbreviatedTable} />
 				{lastFixture && lastFixture.length > 0 && <Fixture fixture={lastFixture[0]} />}
 				{next2Fixtures && next2Fixtures.length > 0 && <Fixture fixture={next2Fixtures[0]} />}
