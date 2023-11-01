@@ -2,6 +2,8 @@ export type TeamInfo = {
 	id: number;
 	logo: string;
 	name: string;
+	shortName: string;
+	abbreviation: string;
 };
 
 export type TableStats = {
