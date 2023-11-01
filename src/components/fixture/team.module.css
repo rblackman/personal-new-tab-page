@@ -1,0 +1,12 @@
+.team {
+}
+
+.img {
+	display: block;
+	width: 1.5rem;
+}
+
+.teamName {
+	margin: 0;
+	font-size: 1rem;
+}
