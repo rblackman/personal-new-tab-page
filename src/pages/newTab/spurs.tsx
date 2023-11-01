@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
-import Card from '../../components/card/card';
 import Fixture from '../../components/fixture/fixture';
+import GridItem from '../../components/grid/gridItem';
 import LeagueTable from '../../components/leagueTable/leagueTable';
 import { ApiDataState, HasErrorSelector, LastNFixtureSelectorFamily, NextNFixtureSelector } from '../../state';
 import styles from './spurs.module.css';
@@ -19,13 +19,13 @@ export default function Spurs() {
 	} = data;
 
 	return (
-		<Card placement="footer">
+		<GridItem location="bottom">
 			<div className={styles.infoGrid}>
 				<LeagueTable standings={abbreviatedTable} />
 				{lastFixture && lastFixture.length > 0 && <Fixture fixture={lastFixture[0]} />}
 				{next2Fixtures && next2Fixtures.length > 0 && <Fixture fixture={next2Fixtures[0]} />}
 				{next2Fixtures && next2Fixtures.length > 1 && <Fixture fixture={next2Fixtures[1]} />}
 			</div>
-		</Card>
+		</GridItem>
 	);
 }

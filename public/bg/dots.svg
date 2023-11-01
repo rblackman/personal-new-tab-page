@@ -74,7 +74,7 @@
 		</pattern>
 		<pattern id="g" width="47" height="53" patternUnits="userSpaceOnUse"
 			patternTransform="translate(-16850.043 -12637.443) scale(17.85)">
-			<g fill="#F60">
+			<g fill="#524da1">
 				<use href="#a" x="2" y="5" />
 				<use href="#a" x="16" y="38" />
 				<use href="#a" x="46" y="42" />
@@ -83,7 +83,7 @@
 		</pattern>
 		<pattern id="h" width="59" height="71" patternUnits="userSpaceOnUse"
 			patternTransform="translate(-16850.043 -12637.443) scale(17.85)">
-			<g fill="#F60">
+			<g fill="#524da1">
 				<use href="#a" x="33" y="13" />
 				<use href="#a" x="27" y="54" />
 				<use href="#a" x="55" y="55" />
@@ -91,7 +91,7 @@
 		</pattern>
 		<pattern id="i" width="139" height="97" patternUnits="userSpaceOnUse"
 			patternTransform="translate(-16850.043 -12637.443) scale(17.85)">
-			<g fill="#F60">
+			<g fill="#524da1">
 				<use href="#a" x="11" y="8" />
 				<use href="#a" x="51" y="13" />
 				<use href="#a" x="17" y="73" />

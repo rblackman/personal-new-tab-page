@@ -4,25 +4,3 @@
 	height: 100%;
 	padding: 2rem;
 }
-
-.layout {
-	margin: 0;
-	padding: 0;
-	display: grid;
-	width: 100%;
-
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr auto;
-	grid-template-areas: 'left right';
-	grid-gap: 1rem;
-	align-items: stretch;
-}
-
-.layout.singleColumn {
-	display: block;
-}
-
-.bottom {
-	grid-template-rows: 1fr auto;
-	grid-template-areas: 'left right' 'footer footer';
-}

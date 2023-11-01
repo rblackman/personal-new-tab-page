@@ -27,7 +27,7 @@ export default function App() {
 	}, []);
 
 	return (
-		<Layout bg="none" singleColumn>
+		<Layout bg="none">
 			<div className={styles.optionsWrap}>
 				<h1 className={styles.title}>Options</h1>
 				<OptionInput value={value} onChange={setValue} />

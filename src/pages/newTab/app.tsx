@@ -2,6 +2,7 @@
 import { useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
 import { BgOptionsType } from '../../components/bg/bg';
+import Grid from '../../components/grid/grid';
 import Layout from '../../components/layout/layout';
 import LinkList from '../../components/linkList/linkList';
 import '../../global.css';
@@ -23,10 +24,12 @@ export default function App({ bg }: Props) {
 		<>
 			<DataSubscriber />
 			<CurrentTime />
-			<Layout bg={bg} bottom>
-				{left && <LinkList {...left} placement="left" />}
-				{right && <LinkList {...right} placement="right" />}
-				<Spurs />
+			<Layout bg={bg}>
+				<Grid>
+					{left && <LinkList {...left} placement="left" />}
+					{right && <LinkList {...right} placement="right" />}
+					<Spurs />
+				</Grid>
 			</Layout>
 		</>
 	);
