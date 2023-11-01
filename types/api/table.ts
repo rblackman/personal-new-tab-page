@@ -12,6 +12,10 @@ export type TableStats = {
 	points: number;
 	description: string | null;
 	form: string;
+	win: number;
+	draw: number;
+	loss: number;
+	gamesPlayed: number;
 };
 
 export type Standing = {

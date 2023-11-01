@@ -1,0 +1,27 @@
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 18rem;
+	font-size: 0.8rem;
+}
+
+.sr {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.r {
+	text-align: right;
+}
+
+.table .th,
+.table .td {
+	padding: 0.25rem;
+	text-align: left;
+	border-top: 0.05rem solid red;
+	vertical-align: middle;
+}

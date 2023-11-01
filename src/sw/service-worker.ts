@@ -47,7 +47,7 @@ async function updateData(): Promise<void> {
 }
 
 async function startAlarm() {
-	await chrome.alarms.create(alarmName, { delayInMinutes: 0.25 });
+	await chrome.alarms.create(alarmName, { delayInMinutes: 5 });
 }
 
 chrome.alarms.onAlarm.addListener(({ name }) => {

@@ -1,0 +1,29 @@
+.img {
+	height: 1.25rem;
+	display: block;
+	margin-right: 0.2rem;
+}
+
+.team {
+	display: flex;
+	align-items: center;
+}
+
+.sm {
+	width: auto;
+	white-space: nowrap;
+}
+
+.smr {
+	width: auto;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.lg {
+	width: 100%;
+}
+
+.highlight {
+	background-color: rgba(var(--teal-r), var(--teal-g), var(--teal-b), 0.2);
+}

@@ -1,16 +1,23 @@
 import { useRecoilValue } from 'recoil';
-import { ApiDataState, ApiErrorState, LastUpdatedState } from '../../state';
+import Card from '../../components/card/card';
+import LeagueTable from '../../components/leagueTable/leagueTable';
+import { ApiDataState, HasErrorSelector } from '../../state';
 
 export default function Spurs() {
-	const apiData = useRecoilValue(ApiDataState);
-	const apiError = useRecoilValue(ApiErrorState);
-	const lastUpdated = useRecoilValue(LastUpdatedState);
+	const data = useRecoilValue(ApiDataState);
+	const hasError = useRecoilValue(HasErrorSelector);
+
+	if (hasError || !data) {
+		return null;
+	}
+
+	const {
+		table: { abbreviatedTable }
+	} = data;
 
 	return (
-		<div>
-			<p>Updated: {lastUpdated}</p>
-			{apiError && <p>Error: {apiError}</p>}
-			{apiData && apiData.form}
-		</div>
+		<Card placement="footer">
+			<LeagueTable standings={abbreviatedTable} />
+		</Card>
 	);
 }

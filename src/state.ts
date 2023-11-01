@@ -1,4 +1,4 @@
-import { atom } from 'recoil';
+import { atom, selector } from 'recoil';
 import ApiResponse from '../types/api/apiResponse';
 import LinkListType from '../types/linkListType';
 import { BgOptionsType } from './components/bg/bg';
@@ -26,4 +26,13 @@ export const BackgroundState = atom<BgOptionsType>({
 export const OptionsState = atom<LinkListType[] | null>({
 	key: 'OptionsState',
 	default: null
+});
+
+export const HasErrorSelector = selector<boolean>({
+	key: 'HasError',
+	get: ({ get }) => {
+		const data = get(ApiDataState);
+		const error = get(ApiErrorState);
+		return !data && !!error;
+	}
 });

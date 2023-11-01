@@ -22,8 +22,8 @@ export default function App({ bg }: Props) {
 	return (
 		<>
 			<DataSubscriber />
-			<Layout bg={bg}>
-				<CurrentTime />
+			<CurrentTime />
+			<Layout bg={bg} bottom>
 				{left && <LinkList {...left} placement="left" />}
 				{right && <LinkList {...right} placement="right" />}
 				<Spurs />
