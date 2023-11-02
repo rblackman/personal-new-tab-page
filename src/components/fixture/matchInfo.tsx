@@ -9,9 +9,11 @@ interface Props {
 }
 
 export default function MatchDate({ date: dateString, venue, inPast }: Props) {
+	const today = dayjs().format('YYYY-MM-DD');
 	const { date, time, weekDay } = useMemo(() => {
 		const day = dayjs(dateString);
-		const weekDay = day.format('dddd');
+		const dateStr = day.format('YYYY-MM-DD');
+		const weekDay = dateStr === today ? 'Today' : day.format('dddd');
 		const date = day.format('MMMM D');
 		const time = day.format('h:mm A');
 		return {
@@ -19,7 +21,7 @@ export default function MatchDate({ date: dateString, venue, inPast }: Props) {
 			time,
 			weekDay
 		};
-	}, [dateString]);
+	}, [dateString, today]);
 
 	return (
 		<div className={styles.info}>
