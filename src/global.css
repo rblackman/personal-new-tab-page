@@ -51,6 +51,10 @@
 	--theme-fg: rgba(var(--white-r), var(--white-g), var(--white-b), var(--theme-fg-a));
 
 	--animate-duration: 0.2s;
+
+	--good: #38c477;
+	--bad: #f2543d;
+	--neutral: #666;
 }
 
 * {

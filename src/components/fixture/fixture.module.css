@@ -1,26 +1,2 @@
-.matchupWrap {
-}
-
-.matchup {
-	display: grid;
-	grid-template-rows: 1fr;
-	grid-template-columns: 1fr min-content 1fr;
-	grid-template-areas: 'home vs away';
-	grid-gap: 0.25rem;
-	align-items: center;
-	justify-content: stretch;
-}
-
-.home {
-	grid-area: home;
-	text-align: right;
-	justify-self: flex-end;
-}
-
-.vs {
-	grid-area: vs;
-}
-
-.away {
-	grid-area: away;
+.fixtureWrap {
 }

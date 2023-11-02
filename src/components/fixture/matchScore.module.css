@@ -1,0 +1,22 @@
+.scoreLine {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin: 0;
+}
+
+.bold {
+	font-weight: 900;
+}
+
+.good {
+	color: var(--good);
+}
+
+.bad {
+	color: var(--bad);
+}
+
+.dash {
+	color: var(--neutral);
+	font-weight: 400;
+}
