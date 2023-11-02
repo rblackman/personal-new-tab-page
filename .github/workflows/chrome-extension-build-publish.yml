@@ -71,7 +71,7 @@ jobs:
 
       - name: Install WebStore CLI
         run: |-
-          npm install -g chrome-webstore-upload-cli
+          npm install -g --no-package-lock chrome-webstore-upload-cli
 
       - name: Upload Extension to Webstore
         run: |-
