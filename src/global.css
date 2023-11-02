@@ -55,6 +55,12 @@
 	--good: #38c477;
 	--bad: #f2543d;
 	--neutral: #666;
+
+	--cl: var(--good);
+	--el: #4339c4;
+	--ecl: #c4af39;
+	--mid: transparent;
+	--rel: var(--bad);
 }
 
 * {

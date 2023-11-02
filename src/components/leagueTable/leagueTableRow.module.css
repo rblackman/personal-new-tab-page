@@ -27,3 +27,27 @@
 .highlight {
 	background-color: rgba(var(--teal-r), var(--teal-g), var(--teal-b), 0.2);
 }
+
+.modifier {
+	border-left: 0.2rem solid transparent;
+}
+
+.cl {
+	border-left-color: var(--cl);
+}
+
+.el {
+	border-left-color: var(--el);
+}
+
+.ecl {
+	border-left-color: var(--ecl);
+}
+
+.mid {
+	border-left-color: var(--mid);
+}
+
+.rel {
+	border-left-color: var(--rel);
+}
