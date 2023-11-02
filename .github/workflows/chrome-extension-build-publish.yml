@@ -58,6 +58,9 @@ jobs:
       CI_GOOGLE_REFRESH_TOKEN: ${{ secrets.CI_GOOGLE_REFRESH_TOKEN }}
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Setup Node.js ${{ vars.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
@@ -71,7 +74,7 @@ jobs:
 
       - name: Install WebStore CLI
         run: |-
-          npm install -g --no-package-lock chrome-webstore-upload-cli
+          npm install -g chrome-webstore-upload-cli
 
       - name: Upload Extension to Webstore
         run: |-
