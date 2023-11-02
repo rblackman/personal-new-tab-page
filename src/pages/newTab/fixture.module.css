@@ -1,0 +1,26 @@
+.fixtureWrap {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: max-content max-content max-content;
+	grid-template-areas: 'matchup' 'info' 'table';
+	place-content: space-evenly;
+	grid-gap: 1rem;
+	height: 100%;
+}
+
+.fixtureWrap.past {
+	grid-template-rows: max-content max-content;
+	grid-template-areas: 'matchup' 'info';
+}
+
+.matchup {
+	grid-area: matchup;
+}
+
+.info {
+	grid-area: info;
+}
+
+.table {
+	grid-area: table;
+}

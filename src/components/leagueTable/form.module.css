@@ -1,0 +1,30 @@
+.formWrap {
+	display: grid;
+	grid-template-columns: repeat(5, min-content);
+	grid-template-rows: 1fr;
+	grid-gap: 0.2rem;
+	padding: 0 0.5rem;
+}
+.form {
+	display: block;
+	font-size: 0.5rem;
+	font-weight: 700;
+	line-height: 1;
+	padding: 0.25rem 0.25rem 0 0.25rem;
+	border-radius: 50%;
+	width: 1rem;
+	height: 1rem;
+	text-align: center;
+}
+
+.win {
+	background-color: rgba(var(--teal-r), var(--teal-g), var(--teal-b), 0.4);
+}
+
+.loss {
+	background-color: rgba(var(--red-r), var(--red-g), var(--red-b), 0.4);
+}
+
+.draw {
+	background-color: rgba(var(--grey-r), var(--grey-g), var(--grey-b), 0.3);
+}

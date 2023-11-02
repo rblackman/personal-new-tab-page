@@ -1,9 +1,12 @@
 import { atom, selector, selectorFamily } from 'recoil';
 import ApiResponse from '../types/api/apiResponse';
+import Fixture from '../types/api/fixture';
 import Result from '../types/api/result';
+import { Standing } from '../types/api/table';
 import Upcoming from '../types/api/upcoming';
 import LinkListType from '../types/linkListType';
 import { BgOptionsType } from './components/bg/bg';
+import highlightTeam from './consts/highlightTeam';
 
 export const ApiDataState = atom<ApiResponse | null>({
 	key: 'ApiDataState',
@@ -62,5 +65,30 @@ export const NextNFixtureSelector = selectorFamily<Upcoming[], number>({
 				return [];
 			}
 			return data.upcomingMatches.slice(0, n);
+		}
+});
+
+export const RelevantStandingsForTeamSelectorFamily = selectorFamily<Standing[], number>({
+	key: 'RelevantStandingsForTeamSelectorFamily',
+	get:
+		(opponentId) =>
+		({ get }) => {
+			const standings = get(ApiDataState)?.table?.fullTable;
+			if (!standings) {
+				return [];
+			}
+			const standing = standings.filter(({ team: { id } }) => id === highlightTeam)[0];
+			const opponentStanding = standings.filter(({ team: { id } }) => id === opponentId)[0];
+			const above = standing.stats.currentPosition < opponentStanding.stats.currentPosition;
+			return above ? [standing, opponentStanding] : [opponentStanding, standing];
+		}
+});
+
+export const OpponentFromFixtureSelector = selectorFamily<number, Fixture>({
+	key: 'RelevantStandingsForTeamSelectorFamily',
+	get:
+		({ home: { id: homeId }, away: { id: awayId } }) =>
+		() => {
+			return homeId === highlightTeam ? awayId : homeId;
 		}
 });

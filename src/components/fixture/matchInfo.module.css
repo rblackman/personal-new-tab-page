@@ -1,0 +1,22 @@
+.info {
+	font-size: 1rem;
+}
+
+.info p {
+	text-align: center;
+	margin: 0;
+}
+
+.line1 {
+	font-size: 0.8rem;
+}
+
+.line2 {
+	font-size: 0.7rem;
+	color: var(--neutral);
+}
+
+.venue {
+	font-size: 0.7rem;
+	color: var(--neutral);
+}

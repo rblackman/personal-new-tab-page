@@ -1,7 +1,6 @@
 .table {
 	border-collapse: collapse;
 	width: 100%;
-	max-width: 18rem;
 	font-size: 0.8rem;
 }
 
@@ -22,6 +21,5 @@
 .table .td {
 	padding: 0.25rem;
 	text-align: left;
-	border-top: 0.05rem solid red;
 	vertical-align: middle;
 }

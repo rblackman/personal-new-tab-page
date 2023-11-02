@@ -1,29 +1,43 @@
 import clsx from 'clsx';
 import { Standing } from '../../../types/api/table';
 import highlightTeam from '../../consts/highlightTeam';
+import Form from './form';
 import styles from './leagueTableRow.module.css';
 
-export default function LeagueTableRow({ team, stats }: Standing) {
-	const { id, name, logo } = team;
-	const { currentPosition, goalDifference, goalsFor, goalsAgainst, points, gamesPlayed, win, draw, loss } = stats;
+interface Props extends Standing {
+	small: boolean;
+	form: boolean;
+	noHighlight: boolean;
+}
+
+export default function LeagueTableRow({ team, stats, small, form, noHighlight }: Props) {
+	const { id, shortName, logo } = team;
+	const { currentPosition, goalDifference, goalsFor, goalsAgainst, points, gamesPlayed, win, draw, loss, form: leagueForm } = stats;
 
 	return (
-		<tr className={clsx({ [styles.highlight]: highlightTeam === id })}>
+		<tr className={clsx({ [styles.highlight]: highlightTeam === id && !noHighlight })}>
 			<td className={styles.smr}>{currentPosition}</td>
 			<td className={styles.lg}>
 				<span className={styles.team}>
 					<img className={styles.img} src={logo} alt={`${name} logo`} />
-					<span>{name}</span>
+					<span>{shortName}</span>
 				</span>
 			</td>
-			<td className={styles.smr}>{gamesPlayed}</td>
-			<td className={styles.smr}>{win}</td>
-			<td className={styles.smr}>{draw}</td>
-			<td className={styles.smr}>{loss}</td>
-			<td className={styles.smr}>
-				{goalsFor}/{goalsAgainst}
-			</td>
-			<td className={styles.smr}>{goalDifference}</td>
+			{!small && <td className={styles.smr}>{gamesPlayed}</td>}
+			{!small && <td className={styles.smr}>{win}</td>}
+			{!small && <td className={styles.smr}>{draw}</td>}
+			{!small && <td className={styles.smr}>{loss}</td>}
+			{!small && (
+				<td className={styles.smr}>
+					{goalsFor}/{goalsAgainst}
+				</td>
+			)}
+			{!small && <td className={styles.smr}>{goalDifference}</td>}
+			{form && (
+				<td>
+					<Form leagueForm={leagueForm} />
+				</td>
+			)}
 			<td className={styles.smr}>{points}</td>
 		</tr>
 	);

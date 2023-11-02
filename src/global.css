@@ -76,7 +76,21 @@ main {
 }
 
 body {
-	font-family: 'Rubik', sans-serif;
+	/* font-family: 'Rubik', sans-serif; */
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		avenir next,
+		avenir,
+		segoe ui,
+		helvetica neue,
+		helvetica,
+		Cantarell,
+		Ubuntu,
+		roboto,
+		noto,
+		arial,
+		sans-serif;
 }
 
 h1 {
