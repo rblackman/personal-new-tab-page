@@ -4,6 +4,8 @@ dist
 
 *.zip
 
+*.afdesign~lock~
+
 # dependencies
 /node_modules
 /.pnp
