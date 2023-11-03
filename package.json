@@ -60,7 +60,7 @@
 		"lint:prettier": "prettier --write .",
 		"lint:type": "tsc --noEmit",
 		"prepare": "husky install",
-		"version": "node bump-version.mjs && prettier ./manifest.json --write && git add manifest.json",
+		"version": "node bump-version.mjs && git add manifest.json",
 		"watch": "webpack -w --config webpack.config.js"
 	}
 }
