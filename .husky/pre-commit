@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run version
-git add manifest.json
+npm version patch --commit-hooks=false --no-git-tag-version
+git add package.json package-lock.json
 npx lint-staged
