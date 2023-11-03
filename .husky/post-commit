@@ -8,3 +8,4 @@ PACKAGE_VERSION=$(cat package.json \
   | sed 's/[",]//g')
 
 git tag -a v$PACKAGE_VERSION -m "Version $PACKAGE_VERSION"
+git push --tags
