@@ -10,7 +10,7 @@
 		"newtab": "index.html"
 	},
 	"default_locale": "en",
-	"description": "A personalizable new tab page for Tottenham Hotspur fans. Keep track of the league table, recent, and upcoming fixtures. Create custom links to your most commonly visited sites.",
+	"description": "A personalizable new tab page for Tottenham Hotspur fans. Keep track of the league table, recent, and upcoming fixtures. Create custom links to your most commonly visited sites. More information about creating custom links here: https://github.com/rblackman/personal-new-tab-page/readme.md#options-format",
 	"host_permissions": ["https://tottenham-api.vercel.app/api/fixtures"],
 	"icons": {
 		"32": "public/logo-32.png",
