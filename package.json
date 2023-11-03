@@ -59,6 +59,7 @@
 		"lint:prettier": "prettier --write .",
 		"lint:type": "tsc --noEmit",
 		"prepare": "husky install",
+		"version": "node bump-version.mjs",
 		"watch": "webpack -w --config webpack.config.js"
 	}
 }
