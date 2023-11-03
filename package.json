@@ -48,7 +48,7 @@
 		"npm": ">=10.2.0"
 	},
 	"license": "apache-2.0",
-	"version": "0.3.6",
+	"version": "0.3.7",
 	"name": "personal-new-tab-page",
 	"private": true,
 	"repository": "github:rblackman/personal-new-tab-page",
