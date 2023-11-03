@@ -1,16 +1,15 @@
 import ApiError from '../../types/api/apiError';
 import ApiResponse from '../../types/api/apiResponse';
 
-const endpoint = 'https://tottenham-api-git-development-rblackman.vercel.app';
-const apiKey = 'test';
+const url = 'https://tottenham-api.vercel.app/api/fixtures';
+const apiKey =
+	'Lantern-Kiln-Headroom-Trading-Dork-Bonfire-Flying-Gout-Activity4-Diabolic-Wanting-Playing-Trombone-Undaunted-Truffle-Uncut-Gloss-Yin-Bazooka-Pushchair';
 
 function isErrorResponse(data: ApiResponse | ApiError): data is ApiError {
 	return (data as ApiError).code !== undefined;
 }
 
 async function fetchData(): Promise<ApiResponse | ApiError> {
-	const url = `${endpoint}/api/fixtures`;
-
 	const options: RequestInit = {
 		headers: {
 			'X-ApiKey': apiKey,
