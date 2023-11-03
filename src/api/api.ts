@@ -28,6 +28,7 @@ async function fetchData(): Promise<ApiResponse | ApiError> {
 	}
 
 	if (!response.ok) {
+		console.error('Fetch returned an error response', { response });
 		return { code: response.status, message: response.statusText };
 	}
 
@@ -35,7 +36,7 @@ async function fetchData(): Promise<ApiResponse | ApiError> {
 	try {
 		data = (await response.json()) as ApiResponse;
 	} catch (error) {
-		console.error(error);
+		console.error('error parsing data', error);
 		return { code: 500, message: 'Failed to parse upstream data' };
 	}
 	return data;
