@@ -48,7 +48,7 @@
 		"npm": ">=10.2.0"
 	},
 	"license": "apache-2.0",
-	"version": "0.3.9",
+	"version": "0.3.10",
 	"name": "spurs-new-tab-page",
 	"private": true,
 	"repository": "github:rblackman/personal-new-tab-page",
