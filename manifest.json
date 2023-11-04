@@ -24,5 +24,5 @@
 	"options_page": "options.html",
 	"permissions": ["alarms", "storage", "tabs"],
 	"short_name": "COYS Tab",
-	"version": "0.3.13"
+	"version": "0.3.14"
 }
