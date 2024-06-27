@@ -35,6 +35,7 @@
 		"html-webpack-plugin": "^5.5.3",
 		"husky": "^8.0.3",
 		"lint-staged": "^15.0.2",
+		"prettier": "^3.3.2",
 		"style-loader": "^3.3.3",
 		"ts-loader": "^9.5.0",
 		"typescript": "^5.2.2",
@@ -44,11 +45,11 @@
 		"webpack-dev-server": "^4.15.1"
 	},
 	"engines": {
-		"node": ">=21.0.0",
-		"npm": ">=10.2.0"
+		"node": ">=20.10.0",
+		"npm": ">=10.2.3"
 	},
 	"license": "apache-2.0",
-	"version": "0.3.16",
+	"version": "0.3.18",
 	"name": "spurs-new-tab-page",
 	"private": true,
 	"repository": "github:rblackman/personal-new-tab-page",
