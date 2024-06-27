@@ -19,7 +19,7 @@
 	},
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhOMjYNi3qeEKZgL+1cJKlBYh1uf2tUQXBodu3WytvMuY8sHo8marMDd5LcgWJ0FaCjLq+YAKmZgrHuXEBR3OEdcXefiFz3wjX0lNlFY1P2ODkWg9KRZTc3qp3Km4IWWJOwv3IrXpG2zwPp9PdlmX5Nd8tM9KdTmqHkmhHHJHd38yk7lkN2w+EHoQmY4CZ7NpA4AwOxoEZltS/2/bpvQXMeKPbRrbinRWNswOox9Hn2pV5Os7MGXCgiWAEkUoy+gbad75niTxxiHvC6un4xP4E0JJTf8UPm6fUpn1f07ZHqaYPIk6b0RFGdyT6F3oQlZ1jxXeAQdGnZ10LGR5omwojQIDAQAB",
 	"manifest_version": 3,
-	"minimum_chrome_version": "118",
+	"minimum_chrome_version": "1",
 	"name": "Spurs New Tab Page",
 	"options_page": "options.html",
 	"permissions": ["alarms", "storage", "tabs"],
