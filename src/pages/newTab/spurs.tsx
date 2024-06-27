@@ -1,5 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import Card from '../../components/card/card';
+import ErrorBoundary from '../../components/errorBoundry';
 import GridItem from '../../components/grid/gridItem';
 import LeagueTable from '../../components/leagueTable/leagueTable';
 import { ApiDataState, HasErrorSelector, LastNFixtureSelectorFamily, NextNFixtureSelector } from '../../state';
@@ -26,9 +27,21 @@ export default function Spurs() {
 				<Card>
 					<LeagueTable standings={abbreviatedTable} />
 				</Card>
-				{lastFixture && lastFixture.length > 0 && <Fixture fixture={lastFixture[0]} />}
-				{next2Fixtures && next2Fixtures.length > 0 && <Fixture fixture={next2Fixtures[0]} />}
-				{next2Fixtures && next2Fixtures.length > 1 && <Fixture fixture={next2Fixtures[1]} />}
+				{lastFixture && lastFixture.length > 0 && (
+					<ErrorBoundary>
+						<Fixture fixture={lastFixture[0]} />
+					</ErrorBoundary>
+				)}
+				{next2Fixtures && next2Fixtures.length > 0 && (
+					<ErrorBoundary>
+						<Fixture fixture={next2Fixtures[0]} />
+					</ErrorBoundary>
+				)}
+				{next2Fixtures && next2Fixtures.length > 1 && (
+					<ErrorBoundary>
+						<Fixture fixture={next2Fixtures[1]} />
+					</ErrorBoundary>
+				)}
 			</div>
 		</GridItem>
 	);

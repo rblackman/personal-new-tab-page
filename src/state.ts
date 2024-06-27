@@ -73,12 +73,19 @@ export const RelevantStandingsForTeamSelectorFamily = selectorFamily<Standing[],
 	get:
 		(opponentId) =>
 		({ get }) => {
-			const standings = get(ApiDataState)?.table?.fullTable;
+			const apiDataState = get(ApiDataState);
+			const standings = apiDataState?.table?.fullTable;
+
 			if (!standings) {
 				return [];
 			}
 			const standing = standings.filter(({ team: { id } }) => id === highlightTeam)[0];
 			const opponentStanding = standings.filter(({ team: { id } }) => id === opponentId)[0];
+
+			if (!standing || !opponentStanding) {
+				return [];
+			}
+
 			const above = standing.stats.currentPosition < opponentStanding.stats.currentPosition;
 			return above ? [standing, opponentStanding] : [opponentStanding, standing];
 		}
