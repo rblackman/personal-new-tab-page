@@ -52,6 +52,8 @@ jobs:
     name: Create Github Release
     runs-on: ubuntu-latest
     needs: chrome-extension-build
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -75,6 +77,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: chrome-extension-${{ github.sha }}.zip
+          asset_path: chrome-extension-${{ github.sha }}
           asset_name: chrome-extension-${{ github.ref }}.zip
           asset_content_type: application/zip
